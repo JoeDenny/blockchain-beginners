@@ -1,0 +1,194 @@
+body {
+    color: #191919;
+}
+.hero-text {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+    width: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    border: 7px solid black;
+}
+
+.dark-background {
+    background-color: #191919;
+    color: #fff;
+}
+
+.image-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+        position: absolute;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 4rem;
+        line-height: 75px;
+        width: 270px;
+        padding: 10px;
+        border: 8px solid white;
+    }
+
+    &.left {
+        background-image: url("./assets/ali&angi.jpg");
+
+        h2 {
+            left: 15px;
+            bottom: 5px;        
+        }
+    }
+    &.right {
+        background-image: url("./assets/meetup3.jpg");
+        h2 {
+            bottom: 15px;
+            right: 30px;
+        }
+    }
+}
+
+.description {
+    padding-top: 1rem;
+}
+
+.events,
+.contact {
+    .content {
+        padding: 2rem 0;
+    }
+
+    h2 {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 3rem;
+    }
+
+    .logo-container {
+        margin: auto;
+        margin-top: 3rem;
+        
+        img {
+            cursor: pointer;
+        }
+        .meetup-logo {
+            width: 265px;
+        }
+        .twitter-logo {
+            width: 150px;
+        }
+    }
+}
+
+.headshots {
+    .headshot-container {
+        border-radius: 50%;
+        background-size: contain;
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+        position: relative;
+
+        &:after {
+            content: '';
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: black;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        p {
+            opacity: 0;
+            position: absolute;
+            top: 85px;
+            left: 10px;
+            font-weight: 400;
+            font-size: 22px;
+            color: white;
+            z-index: 1;
+            transition: opacity .3s;
+        }
+
+        &:hover {
+            &:after {
+                opacity: .3;
+            }
+            p {
+                opacity: 1;
+            }
+        }
+
+        &.goose {
+            margin: 2rem auto;
+            background-image: url('./assets/profile_angus.jpeg');
+        }
+        &.band {
+            margin: auto;
+            background-image: url('./assets/band_headshot.jpg');
+        }
+    }
+}
+
+
+@media (min-width: 586px) {
+    .hero-text {
+        width: 340px;
+        margin: 6rem auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-text {
+        font-size: 4rem;
+        width: 440px;
+    }
+    .dark-background {
+        margin-bottom: 2rem;
+    }
+    .image-container {
+        height: 600px;
+    }   
+    .events,
+    .contact {
+        .content {
+            padding: 2rem;
+        }
+
+        h2 {
+            font-size: 4rem;
+        }
+    } 
+    .twitter-logo {
+        margin-left: 3rem;
+        width: 120px;
+    }
+    .headshots {
+        width: 465px;
+        margin: 3rem auto;
+
+        .headshot-container {
+            float: left;
+            width: 200px;
+            height: 200px;
+    
+            &.goose,
+            &.band {
+                margin: 0;
+            }
+            &.goose {
+                margin-right: 4rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .image-container {
+        height: 430px;
+    }
+}
